@@ -15,7 +15,7 @@ public class Accommodations {
 
 		ACCOMMODATIONS.add(new Accommodation(
 				counter.incrementAndGet(),
-				new Address("37 boulevard Jean Jaurès", "92100", "Boulogne-Billancourt", "", "France", 48.8423342d, 2.2381375d),
+				new Address("37 boulevard Jean JaurÃ¨s", "92100", "Boulogne-Billancourt", "", "France", 48.8423342d, 2.2381375d),
 				93d, // surface
 				4, // rooms
 				false, //elevator, 
@@ -28,7 +28,7 @@ public class Accommodations {
 				HeatingType.GAZ)); // heatingType
 		ACCOMMODATIONS.add(new Accommodation(
 				counter.incrementAndGet(),
-				new Address("30 avenue des Champs Elysées", "75008", "Paris", "", "France", 48.8700168d, 2.3085181),
+				new Address("30 avenue des Champs ElysÃ©es", "75008", "Paris", "", "France", 48.8700168d, 2.3085181),
 				150d, //				surface,
 				5, //				rooms, 
 				true, //				elevator, 
@@ -41,7 +41,7 @@ public class Accommodations {
 				HeatingType.GAZ)); // heatingType
 		ACCOMMODATIONS.add(new Accommodation(
 				counter.incrementAndGet(),
-				new Address("3 Rue de la Fraternité", "94300", "Vincennes", "", "France", 48.8489081d, 2.4323437d),
+				new Address("3 Rue de la FraternitÃ©", "94300", "Vincennes", "", "France", 48.8489081d, 2.4323437d),
 				37d, //				surface,
 				2, //				rooms, 
 				false, //				elevator, 
