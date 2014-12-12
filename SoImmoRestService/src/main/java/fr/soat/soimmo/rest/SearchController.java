@@ -23,7 +23,7 @@ public class SearchController {
     public List<Accommodation> searchAll() {
         return Accommodations.ACCOMMODATIONS.getAll();
     }
-    
+
     @RequestMapping(value = "search", method = RequestMethod.GET)
 	public List<Accommodation> search(Model model, @Valid @ModelAttribute("searchAccommodationParams") SearchAccommodationParams searchParams, BindingResult result) {
     	
