@@ -26,9 +26,14 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    testCompile("junit:junit")
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+	compile("mysql:mysql-connector-java:5.1.21")
+	compile("javax.transaction:jta:1.1")
+	testCompile("junit:junit")
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
+
+
