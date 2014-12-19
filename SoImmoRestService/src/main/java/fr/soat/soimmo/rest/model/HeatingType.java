@@ -41,6 +41,11 @@ public class HeatingType {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "HeatingType [id=" + id + ", name=" + name + "]";
+	}
 	
 	
 }

@@ -18,12 +18,12 @@ public class Accommodation {
 	@Id
 	@GeneratedValue
 	@Column(name = "ACCOMMODATION_ID")
-	private long id;
-	
+	private Long id;
+
 	@OneToOne
 	@JoinColumn(name="ADDRESS_ID")
     private Address address;
-
+	
 	@Column(name = "SURFACE")
     private Double surface;
 
@@ -32,10 +32,10 @@ public class Accommodation {
 
 	@Column(name = "FLOOR")
 	private Integer floor;
-	
+
 	@Column(name = "ELEVATOR")
     private Boolean elevator;
-
+	
 	@Column(name = "RENT")
 	private Double rent;
 
@@ -62,8 +62,8 @@ public class Accommodation {
 
 	public Accommodation() {
 	}
-	
-    public Accommodation(long id, Address address, Double surface,
+
+	public Accommodation(long id, Address address, Double surface,
 			Integer rooms, Integer floor, Boolean elevator, Double rent,
 			Double charge, Date availableFrom, Boolean active,
 			AccommodationType type,
@@ -84,16 +84,16 @@ public class Accommodation {
 		this.hotWaterProductionType = hotWaterProductionType;
 		this.heatingType = heatingType;
 	}
-
+	
     public Boolean getActive() {
         return active;
     }
 
-	public Address getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public Date getAvailableFrom() {
+	public Date getAvailableFrom() {
         return availableFrom;
     }
 
@@ -188,4 +188,15 @@ public class Accommodation {
     public void setType(AccommodationType type) {
         this.type = type;
     }
+
+    @Override
+	public String toString() {
+		return "Accommodation [id=" + id + ", address=" + address
+				+ ", surface=" + surface + ", rooms=" + rooms + ", floor="
+				+ floor + ", elevator=" + elevator + ", rent=" + rent
+				+ ", charge=" + charge + ", availableFrom=" + availableFrom
+				+ ", active=" + active + ", type=" + type
+				+ ", hotWaterProductionType=" + hotWaterProductionType
+				+ ", heatingType=" + heatingType + "]";
+	}
 }

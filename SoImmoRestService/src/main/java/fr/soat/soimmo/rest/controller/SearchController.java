@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.soat.soimmo.rest.model.Accommodation;
+import fr.soat.soimmo.rest.model.AccommodationDTO;
 import fr.soat.soimmo.rest.model.SearchAccommodationParams;
 import fr.soat.soimmo.rest.service.AccommodationService;
 
@@ -32,17 +33,19 @@ public class SearchController {
     }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)
-	public List<Accommodation> search(Model model, @Valid @ModelAttribute("searchAccommodationParams") SearchAccommodationParams searchParams, BindingResult result) {
+	public List<AccommodationDTO> search(Model model, @Valid @ModelAttribute("searchAccommodationParams") SearchAccommodationParams searchParams, BindingResult result) {
 
-    	Accommodation accommodation = accommodationService.findAccommodation(1L);
-    	List<Accommodation> accommodations = new ArrayList<Accommodation>();
-    	accommodations.add(accommodation);
+    	System.out.println(searchParams);
+
+    	List<AccommodationDTO> accommodationDTOs = accommodationService.findAllAccommodationDTOs(searchParams);
+    	
+    	System.out.println("REST - Found report accommodations : " + accommodationDTOs);
     	
 		// Handle validation errors (e.g. wrong date format, elevator=2, etc...)
 		if(result.hasErrors())
-			return new ArrayList<Accommodation>();
+			return new ArrayList<AccommodationDTO>();
     	
-    	return accommodations;
+    	return accommodationDTOs;
     }
     
 }

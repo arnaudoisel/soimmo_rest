@@ -14,10 +14,10 @@ public class City {
 	@GeneratedValue
 	@Column(name = "CITY_ID")
 	private Long id;
-	
+
 	@Column(name = "NAME")
 	private String name;
-
+	
 	public City() {
 	}
 
@@ -41,6 +41,11 @@ public class City {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "City [id=" + id + ", name=" + name + "]";
 	}
 	
 }

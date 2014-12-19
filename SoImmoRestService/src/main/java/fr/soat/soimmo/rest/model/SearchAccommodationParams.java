@@ -9,9 +9,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class SearchAccommodationParams {
 
-    private AccommodationType type;
+    private String type;
 
-    private String city;
+	private String city;
 
     @Min(0)
     private Integer minSurface;
@@ -20,20 +20,20 @@ public class SearchAccommodationParams {
     private Integer minRooms;
 
     private Integer floor;
-    
-    private Boolean elevator;
 
+    private Boolean elevator;
+    
     @Min(0)
     private Double maxRentCharge;
 
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date maxAvailabilityDate;
-    
+
     public SearchAccommodationParams() {
     	
     }
-
-	public SearchAccommodationParams(AccommodationType type, String city,
+    
+    public SearchAccommodationParams(String type, String city,
 			Integer minSurface, Integer minRooms, Integer floor,
 			Boolean elevator, Double maxRentCharge,
 			Date maxAvailabilityDate) {
@@ -75,7 +75,7 @@ public class SearchAccommodationParams {
 		return minSurface;
 	}
 
-	public AccommodationType getType() {
+	public String getType() {
 		return type;
 	}
 
@@ -107,8 +107,17 @@ public class SearchAccommodationParams {
 		this.minSurface = minSurface;
 	}
 
-	public void setType(AccommodationType type) {
+	public void setType(String type) {
 		this.type = type;
+	}
+
+	@Override
+	public String toString() {
+		return "SearchAccommodationParams [type=" + type + ", city=" + city
+				+ ", minSurface=" + minSurface + ", minRooms=" + minRooms
+				+ ", floor=" + floor + ", elevator=" + elevator
+				+ ", maxRentCharge=" + maxRentCharge + ", maxAvailabilityDate="
+				+ maxAvailabilityDate + "]";
 	}
 
 }

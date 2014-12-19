@@ -16,10 +16,10 @@ public class Address {
 	@GeneratedValue
 	@Column(name = "ADDRESS_ID")
 	private Long id;
-	
+
 	@Column(name = "STREET")
     private String street;
-
+	
 	@Column(name = "ZIP_CODE")
     private String zipCode;
 
@@ -43,7 +43,7 @@ public class Address {
 
 	public Address() {
 	}
-	
+
 	public Address(Long id, String street, String zipCode, City city, State state, Country country, Double latitude, Double longitude) {
     	this.id = id;
     	this.street = street;
@@ -54,12 +54,12 @@ public class Address {
         this.latitude = latitude;
         this.longitude = longitude;
     }
-
+	
 	public City getCity() {
         return city;
     }
 
-    public Country getCountry() {
+	public Country getCountry() {
         return country;
     }
 
@@ -118,4 +118,12 @@ public class Address {
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
+
+    @Override
+	public String toString() {
+		return "Address [id=" + id + ", street=" + street + ", zipCode="
+				+ zipCode + ", city=" + city + ", state=" + state
+				+ ", country=" + country + ", latitude=" + latitude
+				+ ", longitude=" + longitude + "]";
+	}
 }

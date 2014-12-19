@@ -17,11 +17,11 @@ public class AccommodationType {
 
 	@Column(name = "NAME")
 	private String name;
-	
+
 	public AccommodationType() {
 		
 	}
-
+	
 	public AccommodationType(Long id, String name) {
 		this.id = id;
 		this.name = name;
@@ -38,9 +38,14 @@ public class AccommodationType {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "AccommodationType [id=" + id + ", name=" + name + "]";
 	}
 	
 	

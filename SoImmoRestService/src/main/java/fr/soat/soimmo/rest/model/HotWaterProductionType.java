@@ -14,32 +14,37 @@ public class HotWaterProductionType {
 	@GeneratedValue
 	@Column(name = "HOT_WATER_PRODUCTION_TYPE_ID")
 	private Long id;
-	
+
 	@Column(name = "NAME")
 	private String name;
-
+	
 	public HotWaterProductionType() {
 	}
-	
+
 	public HotWaterProductionType(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
-
+	
 	public Long getId() {
 		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getName() {
 		return name;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "HotWaterProductionType [id=" + id + ", name=" + name + "]";
 	}
 	
 }
