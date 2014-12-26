@@ -2,6 +2,7 @@ package fr.soat.soimmo.rest.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +21,7 @@ public class Accommodation {
 	@Column(name = "ACCOMMODATION_ID")
 	private Long id;
 
-	@OneToOne
+	@OneToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="ADDRESS_ID")
     private Address address;
 	
@@ -48,22 +49,22 @@ public class Accommodation {
 	@Column(name = "ACTIVE")
     private Boolean active;
 
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="ACCOMMODATION_TYPE_ID", referencedColumnName="ACCOMMODATION_TYPE_ID")
     private AccommodationType type;
 
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="HOT_WATER_PRODUCTION_TYPE_ID", referencedColumnName="HOT_WATER_PRODUCTION_TYPE_ID")
     private HotWaterProductionType hotWaterProductionType;
 
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="HEATING_TYPE_ID", referencedColumnName="HEATING_TYPE_ID")
     private HeatingType heatingType;
 
 	public Accommodation() {
 	}
 
-	public Accommodation(long id, Address address, Double surface,
+	public Accommodation(Long id, Address address, Double surface,
 			Integer rooms, Integer floor, Boolean elevator, Double rent,
 			Double charge, Date availableFrom, Boolean active,
 			AccommodationType type,
@@ -117,7 +118,7 @@ public class Accommodation {
         return hotWaterProductionType;
     }
 
-    public long getId() {
+    public Long getId() {
 		return id;
 	}
 
@@ -169,7 +170,7 @@ public class Accommodation {
         this.hotWaterProductionType = hotWaterProductionType;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
 		this.id = id;
 	}
 

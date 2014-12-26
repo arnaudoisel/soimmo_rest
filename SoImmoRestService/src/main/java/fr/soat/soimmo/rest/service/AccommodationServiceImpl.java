@@ -67,6 +67,11 @@ public class AccommodationServiceImpl implements AccommodationService {
 	}
 
 	@Override
+	public void addAccommodation(Accommodation acc) {
+		accommodationRepository.save(acc);
+	}
+	
+	@Override
 	public Accommodation findAccommodation(Long id) {
 		return accommodationRepository.findOne(id);
 	}

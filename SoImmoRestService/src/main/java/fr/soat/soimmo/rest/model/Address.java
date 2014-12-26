@@ -1,5 +1,6 @@
 package fr.soat.soimmo.rest.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,15 +24,15 @@ public class Address {
 	@Column(name = "ZIP_CODE")
     private String zipCode;
 
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="CITY_ID")
     private City city;
 
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="STATE_ID")
     private State state;
 
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="COUNTRY_ID")
     private Country country;
 

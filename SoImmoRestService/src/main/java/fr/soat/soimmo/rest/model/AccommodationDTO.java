@@ -14,28 +14,31 @@ public class AccommodationDTO {
 
     private Integer rooms;
 
+    private Integer floor;
+    
     private Boolean elevator;
 
-    private Double rent;
+	private Double rent;
 
-    private Double charge;
+	private Double charge;
 
     private Date availableFrom;
 
-	private Boolean active;
+    private Boolean active;
 
-	private String type;
+    private String type;
 
-    private String hotWaterProductionType;
+	private String hotWaterProductionType;
 
-    private String heatingType;
+	private String heatingType;
 
-	@QueryProjection
+    @QueryProjection
 	public AccommodationDTO(
 			Long id,
 			AddressDTO address,
 			Double surface,
 			Integer rooms,
+			Integer floor,
 			Boolean elevator,
 			Double rent,
 			Double charge,
@@ -49,6 +52,7 @@ public class AccommodationDTO {
 		this.address = address;
 		this.surface = surface;
 		this.rooms = rooms;
+		this.floor = floor;
 		this.elevator = elevator;
 		this.rent = rent;
 		this.charge = charge;
@@ -58,15 +62,15 @@ public class AccommodationDTO {
 		this.hotWaterProductionType = hotWaterProductionType;
 		this.heatingType = heatingType;
 	}
-		
-	public Boolean getActive() {
+
+    public Boolean getActive() {
 		return active;
 	}
 
 	public AddressDTO getAddress() {
 		return address;
 	}
-
+		
 	public Date getAvailableFrom() {
 		return availableFrom;
 	}
@@ -77,6 +81,10 @@ public class AccommodationDTO {
 
 	public Boolean getElevator() {
 		return elevator;
+	}
+
+	public Integer getFloor() {
+		return floor;
 	}
 
 	public String getHeatingType() {
@@ -127,6 +135,10 @@ public class AccommodationDTO {
 		this.elevator = elevator;
 	}
 
+	public void setFloor(Integer floor) {
+		this.floor = floor;
+	}
+
 	public void setHeatingType(String heatingType) {
 		this.heatingType = heatingType;
 	}
@@ -159,12 +171,14 @@ public class AccommodationDTO {
 	@Override
 	public String toString() {
 		return "AccommodationDTO [id=" + id + ", address=" + address
-				+ ", surface=" + surface + ", rooms=" + rooms + ", elevator="
-				+ elevator + ", rent=" + rent + ", charge=" + charge
-				+ ", availableFrom=" + availableFrom + ", active=" + active
-				+ ", type=" + type + ", hotWaterProductionType="
-				+ hotWaterProductionType + ", heatingType=" + heatingType + "]";
+				+ ", surface=" + surface + ", rooms=" + rooms + ", floor="
+				+ floor + ", elevator=" + elevator + ", rent=" + rent
+				+ ", charge=" + charge + ", availableFrom=" + availableFrom
+				+ ", active=" + active + ", type=" + type
+				+ ", hotWaterProductionType=" + hotWaterProductionType
+				+ ", heatingType=" + heatingType + "]";
 	}
+
 
     
 }

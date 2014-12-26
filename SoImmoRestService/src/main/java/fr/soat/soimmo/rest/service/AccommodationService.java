@@ -8,6 +8,8 @@ import fr.soat.soimmo.rest.model.SearchAccommodationParams;
 
 public interface AccommodationService {
 	
+	void addAccommodation(Accommodation acc);
+	
 	// Full accommodations
 	
 	Accommodation findAccommodation(Long id);

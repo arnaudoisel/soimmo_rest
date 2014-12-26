@@ -74,6 +74,7 @@ dependencies {
 	querydslapt  "com.mysema.querydsl:querydsl-apt:${querydslVersion}"
 	
 	testCompile("junit:junit")
+	testCompile "com.jayway.restassured:rest-assured:2.4.0"
 }
 
 task wrapper(type: Wrapper) {
